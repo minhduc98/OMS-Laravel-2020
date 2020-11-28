@@ -16,6 +16,11 @@ class UserTableSeeder extends Seeder
                 'username' => 'abc',
                 'password' => bcrypt('12345678'),
                 'userType' => 'student'
+            ],
+            [
+                'username' => 'admin',
+                'password' => bcrypt('12345678'),
+                'userType' => 'admin'
             ]
         ];
 
