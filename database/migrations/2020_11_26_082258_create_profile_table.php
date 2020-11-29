@@ -17,7 +17,7 @@ class CreateProfileTable extends Migration
             $table->id();
             $table->string("fullName", 50);
             $table->string("fullName_v", 50);
-            $table->string("gender", 5);
+            $table->string("gender", 10);
             $table->string("DOB", 200);
             $table->string("DOB_v", 200);
             $table->string("POB", 50);

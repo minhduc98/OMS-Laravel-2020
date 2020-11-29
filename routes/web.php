@@ -19,4 +19,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/home', 'HomeController@index')->name('home');
+
+    //profile
+    Route::get('/profile', 'ProfileController@index');
+    Route::get('profile_import_excel', 'ProfileController@import_excel');
+    Route::post('profile_import_excel', 'ProfileController@import_excel');
+});

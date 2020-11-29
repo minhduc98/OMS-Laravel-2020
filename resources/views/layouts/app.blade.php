@@ -37,8 +37,6 @@
     <!-- Custom Theme JavaScript -->
     <script src="{{ url('js/startmin.js') }}"></script>
 
-</head>
-
 <div id="app">
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="navbar-header">
@@ -145,6 +143,8 @@
         </div>
     </div>
 @endif
+
+</head>
 
 <body>
     <main class="py-4">
