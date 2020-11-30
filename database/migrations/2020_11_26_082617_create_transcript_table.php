@@ -17,6 +17,7 @@ class CreateTranscriptTable extends Migration
             $table->id();
             $table->integer("student_id");
             $table->integer("year_id");
+            $table->timestamps();
         });
     }
 

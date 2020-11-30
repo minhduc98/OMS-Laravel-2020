@@ -18,6 +18,7 @@ class CreateCourseReportTable extends Migration
             $table->integer("transDetail_id");
             $table->integer("course_id");
             $table->double("final");
+            $table->timestamps();
         });
     }
 

@@ -19,8 +19,9 @@ class CreateDiplomaTable extends Migration
             $table->string("ranking_v", 20);
             $table->integer("student_id");
             $table->integer("graduationYear");
-            $table->string("acceptGraduation", 20);
-            $table->string("diplomaNote", 20);
+            $table->string("diplomaNumber", 50);
+            $table->string("diplomaNote", 50);
+            $table->timestamps();
         });
     }
 

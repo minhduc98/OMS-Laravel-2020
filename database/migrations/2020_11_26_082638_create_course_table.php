@@ -23,6 +23,7 @@ class CreateCourseTable extends Migration
             $table->integer("totalHour");
             $table->integer("lectureHour");
             $table->integer("labHour");
+            $table->timestamps();
         });
     }
 

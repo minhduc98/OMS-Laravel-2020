@@ -37,112 +37,140 @@
     <!-- Custom Theme JavaScript -->
     <script src="{{ url('js/startmin.js') }}"></script>
 
-<div id="app">
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="#">Home</a>
-        </div>
+    <div id="app">
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/home">Home</a>
+            </div>
 
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
 
-        <!-- Top Navigation: Left Menu -->
-        <ul class="nav navbar-nav navbar-left navbar-top-links">
-            <li><a href="index.php"><i class="fa fa-home fa-fw"></i> USTH</a></li>
-        </ul>
+            <!-- Top Navigation: Left Menu -->
+            <ul class="nav navbar-nav navbar-left navbar-top-links">
+                <li><a href="#"><i class="fa fa-home fa-fw"></i> USTH</a></li>
+            </ul>
 
 
-        <!-- Right Side Of Navbar -->
-        <ul class="navbar-nav navbar-right nav navbar-inverse">
-            <!-- Authentication Links -->
-            @guest
-            <li>
-                <a style="" href="{{ route('login') }}">{{ __('Login') }}</a>
-            </li>
-            @if (Route::has('register'))
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-            </li>
-            @endif
-            @else
-            <li class="nav-item dropdown">
-                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false" v-pre>
-                    {{ Auth::user()->username }}
-                </a>
-            </li>
+            <!-- Right Side Of Navbar -->
+            <ul class="navbar-nav navbar-right nav navbar-inverse">
+                <!-- Authentication Links -->
+                @guest
+                <li>
+                    <a style="" href="{{ route('login') }}">{{ __('Login') }}</a>
+                </li>
+                @if (Route::has('register'))
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                </li>
+                @endif
+                @else
+                <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->username }}
+                    </a>
+                </li>
 
-            <li>
-                <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                <li>
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
-                    {{ __('Logout') }}
-                </a>
-            </li>
+                        {{ __('Logout') }}
+                    </a>
+                </li>
 
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                @csrf
-            </form>
-            @endguest
-            @if(!Auth::check())
-            <li>
-                <a href="#">Guest access</a>
-            </li>
-            @endif
-        </ul>
-    </nav>
-</div>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+                @endguest
+                @if(!Auth::check())
+                <li>
+                    <a href="#">Guest access</a>
+                </li>
+                @endif
+            </ul>
+        </nav>
+    </div>
 
-@if(Auth::check())
+    @if(Auth::check())
     @if(Auth::user()->userType == 'student' || Auth::user()->userType == 'admin')
     <div class="navbar-default sidebar" role="navigation">
         <div class="sidebar-nav navbar-collapse">
 
             <ul class="nav" id="side-menu">
-                <li class="sidebar-search">
+                <!-- <li class="sidebar-search">
                     <div class="input-group custom-search-form">
-                        <form action="search.php" method="POST">
-                            <input type="text" name="search" placeholder="Search...">
-                            <span class="input-group-btn">
-                                <button class="btn btn-primary" name="submit-search" type="submit">
-                                    <i class="fa fa-search" name="submit-search"></i>
-                                </button>
-                            </span>
-                        </form>
+                        {{Form::open(['method'=>'GET'])}}
+                            {{Form::text('search', '', ['placeholder' => 'Search...'])}}
+                            <button class="btn btn-primary" name="submit-search" type="submit">
+                                <i class="fa fa-search" name="submit-search"></i>
+                            </button>
+                        {{Form::close()}}
                     </div>
-                </li>
+                </li> -->
                 <li>
-                    <a><i class="fa fa-th-large fa-fw"></i> Bachelor <span class="fa arrow"></span></a>
+                    <a> Personal information <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="#">View/Edit</a>
-
-                        </li>
-                        @endif
-                        @if(Auth::user()->userType == 'admin')
-                        <li>
-                            <a href="#">Import</a>
-
+                            <a href="#"><i class="fa fa-user"></i> User</a>
                         </li>
                         <li>
-                            <a href="#">Export</a>
+                            <a href="#"><i class="fa fa-info-circle"></i> Profile</a>
                         </li>
                         <li>
-                            <a href="#">Create Statistics</a>
+                            <a href="#"><i class="fa fa-graduation-cap"></i> Student</a>
                         </li>
-                        @endif
-
                     </ul>
                 </li>
-
+                @endif
+                @if(Auth::user()->userType == 'admin')
+                <li>
+                    <a>Academic information <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="#"><i class="fa fa-book"></i> Course</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-university"></i> Department</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-laptop"></i> Program</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-key"></i> Major</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-calendar"></i> Year</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Transcript & Diploma information <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="#"><i class="fa fa-calculator"></i> Course Report</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-sticky-note-o"></i> Transcript</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-sticky-note"></i> Transcript Detail</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-trophy"></i> Diploma</a>
+                        </li>
+                    </ul>
+                </li>
+                @endif
             </ul>
 
         </div>
     </div>
-@endif
+    @endif
 
 </head>
 

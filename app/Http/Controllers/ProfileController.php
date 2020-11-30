@@ -10,7 +10,7 @@ class ProfileController extends Controller
 {
     public function index()
     {
-        return view('home');
+        return view('profile');
     }
 
     public function import_excel(Request $request)

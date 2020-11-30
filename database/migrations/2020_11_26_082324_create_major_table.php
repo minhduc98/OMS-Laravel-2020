@@ -15,8 +15,8 @@ class CreateMajorTable extends Migration
     {
         Schema::create('major', function (Blueprint $table) {
             $table->id();
-            $table->string("MajorName", 50);
-            $table->string("MajorName_v", 50);
+            $table->string("MajorName", 100);
+            $table->string("MajorName_v", 100);
             $table->string("shortName", 20);
             $table->integer("year_id");
             $table->integer("department_id");

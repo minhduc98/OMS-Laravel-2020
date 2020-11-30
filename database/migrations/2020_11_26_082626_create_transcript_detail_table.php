@@ -16,9 +16,8 @@ class CreateTranscriptDetailTable extends Migration
         Schema::create('transcript_detail', function (Blueprint $table) {
             $table->id();
             $table->integer("transcript_id");
-            $table->integer("ETCScredits");
-            $table->double("GPAgrade");
             $table->string("note", 50);
+            $table->timestamps();
         });
     }
 
