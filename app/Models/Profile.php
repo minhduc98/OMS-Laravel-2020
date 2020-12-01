@@ -22,7 +22,7 @@ class Profile extends Model
         'MartialStatus',
         'Address',
         'City',
-        'Country '];
+        'Country'];
 
     public function student()
     {

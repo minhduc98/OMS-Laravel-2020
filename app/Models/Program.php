@@ -8,7 +8,7 @@ class Program extends Model
 {
     protected $fillable = [ 'programName',
         'programName_v',
-        'shortName '];
+        'shortName'];
 
     public function major()
     {

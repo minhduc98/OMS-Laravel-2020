@@ -8,7 +8,7 @@ class Department extends Model
 {
     protected $fillable = [ 'departmentName',
         'departmentName_v',
-        'shortName '];
+        'shortName'];
 
     public function major()
     {

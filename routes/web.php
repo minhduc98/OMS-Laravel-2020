@@ -23,7 +23,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/home', 'HomeController@index')->name('home');
 
     //profile
-    Route::get('/profile', 'ProfileController@index');
+    Route::get('profile', 'ProfileController@index');
+
+    Route::get('profile_edit/{id}', 'ProfileController@edit');
+    Route::post('profile_edit/{id}', 'ProfileController@save');
+    Route::get('profile_delete/{id}', 'ProfileController@delete');
+
     Route::get('profile_import_excel', 'ProfileController@import_excel');
     Route::post('profile_import_excel', 'ProfileController@import_excel');
 });

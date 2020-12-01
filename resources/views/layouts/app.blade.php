@@ -5,7 +5,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>USTH OMS</title>
+    <title>{{$title ?? 'OMS'}}</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{ url('/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -24,6 +24,8 @@
 
     <!-- Custom Fonts -->
     <link href="{{ url('css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+
+    <link href="{{ url('css/table.css') }}" rel="stylesheet">
 
     <!-- jQuery -->
     <script src="{{ url('js/jquery.min.js') }}"></script>
@@ -119,7 +121,7 @@
                             <a href="#"><i class="fa fa-user"></i> User</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-info-circle"></i> Profile</a>
+                            <a href="{{ action('ProfileController@index') }}"><i class="fa fa-info-circle"></i> Profile</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-graduation-cap"></i> Student</a>
@@ -175,7 +177,7 @@
 </head>
 
 <body>
-    <main class="py-4">
+    <main>
         @yield('content')
     </main>
 </body>
