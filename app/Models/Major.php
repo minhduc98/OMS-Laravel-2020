@@ -6,9 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Major extends Model
 {
-    protected $fillable = [ 'majorName',
-        'majorName_v',
-        'shortName'];
+    protected $table = 'major';
+
+    protected $fillable = [ 'MajorName',
+        'MajorName_v',
+        'shortName',
+        'department_id',
+        'program_id',
+        'year_id'];
 
     public function department()
     {

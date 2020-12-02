@@ -11,12 +11,11 @@
                         style="margin-right: 50px; font-size: 28px;">Profile</span>Display list of profiles</h2>
                 <div class="panel-body">
                     <div class="row">
-                        <div class="table-responsive">
+                        <div class="table-responsive table-content">
                             <table class="table table-bordered" border="1">
                                 <thead>
                                     <tr class="success">
-                                        <th></th>
-                                        <th>ID</th>
+                                        <th>Operations</th>
                                         <th>Full Name</th>
                                         <th>Full Name in Vietnamese </th>
                                         <th>Gender</th>
@@ -41,10 +40,10 @@
                                             <a href="/profile_edit/{{$profile->id}}">
                                                 <i class="fa fa-edit"></i>Edit
                                             </a>
+                                            <br>
                                             <a href="/profile_delete/{{$profile->id}}">
                                                 <i class="fa fa-remove"></i>Delete
                                             </a>
-                                        <td>{{ $profile->id }}</td>
                                         <td>{{ $profile->fullName }}</td>
                                         <td>{{ $profile->fullName_v }}</td>
                                         <td>{{ $profile->gender }}</td>

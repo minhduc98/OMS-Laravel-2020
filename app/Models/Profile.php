@@ -26,6 +26,6 @@ class Profile extends Model
 
     public function student()
     {
-        return $this->hasOne('App\Models\Student', 'student_id', 'id');
+        return $this->hasOne('App\Models\Student');
     }
 }

@@ -137,16 +137,16 @@
                             <a href="#"><i class="fa fa-book"></i> Course</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-university"></i> Department</a>
+                            <a href="{{ action('DepartmentController@index') }}"><i class="fa fa-university"></i> Department</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-laptop"></i> Program</a>
+                            <a href="{{ action('ProgramController@index') }}"><i class="fa fa-laptop"></i> Program</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-key"></i> Major</a>
+                            <a href="{{ action('MajorController@index') }}"><i class="fa fa-key"></i> Major</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-calendar"></i> Year</a>
+                            <a href="{{ action('YearController@index') }}"><i class="fa fa-calendar"></i> Year</a>
                         </li>
                     </ul>
                 </li>

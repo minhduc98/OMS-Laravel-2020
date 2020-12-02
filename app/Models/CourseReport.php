@@ -6,7 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class CourseReport extends Model
 {
-    protected $fillable = [ 'final' ];
+    protected $table = 'course_report';
+
+    protected $fillable = [ 'final', 'transcriptDetail_id', 'course_id' ];
 
     public function transcriptDetails()
     {

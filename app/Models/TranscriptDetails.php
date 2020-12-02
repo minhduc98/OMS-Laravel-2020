@@ -6,9 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class TranscriptDetails extends Model
 {
+    protected $table = 'transcript_detail';
+
     protected $fillable = [ 'ETCScredits',
     'GPAGrade',
-    'note'];
+    'note', 'transcript_id'];
 
     public function transcript()
     {

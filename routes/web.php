@@ -31,4 +31,32 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('profile_import_excel', 'ProfileController@import_excel');
     Route::post('profile_import_excel', 'ProfileController@import_excel');
+
+    //department
+    Route::get('department', 'DepartmentController@index');
+
+    Route::get('department_edit/{id}', 'DepartmentController@edit');
+    Route::post('department_edit/{id}', 'DepartmentController@save');
+    Route::get('department_delete/{id}', 'DepartmentController@delete');
+
+    //program
+    Route::get('program', 'ProgramController@index');
+
+    Route::get('program_edit/{id}', 'ProgramController@edit');
+    Route::post('program_edit/{id}', 'ProgramController@save');
+    Route::get('program_delete/{id}', 'ProgramController@delete');
+
+    //major
+    Route::get('major', 'MajorController@index');
+
+    Route::get('major_edit/{id}', 'MajorController@edit');
+    Route::post('major_edit/{id}', 'MajorController@save');
+    Route::get('major_delete/{id}', 'MajorController@delete');
+
+    //year
+    Route::get('year', 'YearController@index');
+
+    Route::get('year_edit/{id}', 'YearController@edit');
+    Route::post('year_edit/{id}', 'YearController@save');
+    Route::get('year_delete/{id}', 'YearController@delete');
 });

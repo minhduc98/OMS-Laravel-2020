@@ -6,7 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Student extends Model
 {
-    protected $fillable = [ 'student_code'];
+    protected $table = 'student';
+
+    protected $fillable = [ 'student_code', 'user_id', 'profile_id', 'major_id'];
+
     public function user()
     {
         return $this->belongsTo('App\Models\User', 'user_id', 'id');
@@ -29,6 +32,6 @@ class Student extends Model
 
     public function diploma()
     {
-        return $this->hasOne('App\Models\Diploma', 'student_id', 'id');
+        return $this->hasOne('App\Models\Diploma');
     }
 }

@@ -35,7 +35,7 @@ class ProfileController extends Controller
 
             DB::transaction(function () use ($request) {
 
-                $profile = Profile::find($request->profile_id);
+                $profile = Profile::find($request->id);
 
                 $profile->fullName = $request->profile_name;
                 $profile->fullName_v = $request->profile_name_v;
