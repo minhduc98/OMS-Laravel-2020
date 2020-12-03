@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 
     <title>{{$title ?? 'OMS'}}</title>
 
@@ -104,7 +105,7 @@
         <div class="sidebar-nav navbar-collapse">
 
             <ul class="nav" id="side-menu">
-                <!-- <li class="sidebar-search">
+                <li class="sidebar-search">
                     <div class="input-group custom-search-form">
                         {{Form::open(['method'=>'GET'])}}
                             {{Form::text('search', '', ['placeholder' => 'Search...'])}}
@@ -113,18 +114,18 @@
                             </button>
                         {{Form::close()}}
                     </div>
-                </li> -->
+                </li>
                 <li>
                     <a> Personal information <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="#"><i class="fa fa-user"></i> User</a>
+                            <a href="{{ action('UserController@index') }}"><i class="fa fa-user"></i> User</a>
                         </li>
                         <li>
                             <a href="{{ action('ProfileController@index') }}"><i class="fa fa-info-circle"></i> Profile</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-graduation-cap"></i> Student</a>
+                            <a href="{{ action('StudentController@index') }}"><i class="fa fa-graduation-cap"></i> Student</a>
                         </li>
                     </ul>
                 </li>
@@ -134,7 +135,7 @@
                     <a>Academic information <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="#"><i class="fa fa-book"></i> Course</a>
+                            <a href="{{ action('CourseController@index') }}"><i class="fa fa-book"></i> Course</a>
                         </li>
                         <li>
                             <a href="{{ action('DepartmentController@index') }}"><i class="fa fa-university"></i> Department</a>

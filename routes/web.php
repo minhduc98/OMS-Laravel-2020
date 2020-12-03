@@ -32,6 +32,21 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('profile_import_excel', 'ProfileController@import_excel');
     Route::post('profile_import_excel', 'ProfileController@import_excel');
 
+    //student
+    Route::get('student', 'StudentController@index');
+
+    Route::get('student_edit/{id}', 'StudentController@edit');
+    Route::post('student_edit/{id}', 'StudentController@save');
+    Route::get('student_delete/{id}', 'StudentController@delete');
+
+    //user
+    Route::get('user', 'UserController@index');
+
+    Route::get('user_edit/{id}', 'UserController@edit');
+    Route::post('user_edit/{id}', 'UserController@save');
+    Route::get('user_delete/{id}', 'UserController@delete');
+
+
     //department
     Route::get('department', 'DepartmentController@index');
 
@@ -52,6 +67,17 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('major_edit/{id}', 'MajorController@edit');
     Route::post('major_edit/{id}', 'MajorController@save');
     Route::get('major_delete/{id}', 'MajorController@delete');
+
+    //major
+    Route::get('course', 'CourseController@index');
+
+    Route::get('course_edit/{id}', 'CourseController@edit');
+    // Only for dependent selection
+    Route::get('year_to_major', 'CourseController@findMajor')->name('year_to_major');
+
+    Route::post('course_edit/{id}', 'CourseController@save');
+    Route::get('course_delete/{id}', 'CourseController@delete');
+
 
     //year
     Route::get('year', 'YearController@index');
