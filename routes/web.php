@@ -85,4 +85,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('year_edit/{id}', 'YearController@edit');
     Route::post('year_edit/{id}', 'YearController@save');
     Route::get('year_delete/{id}', 'YearController@delete');
+
+    //diploma
+    Route::get('diploma', 'DiplomaController@index');
+
+    Route::get('diploma/{id}', 'DiplomaController@pdf');
 });

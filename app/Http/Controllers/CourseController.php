@@ -13,7 +13,6 @@ class CourseController extends Controller
     public function index(Request $request)
     {
         $title = 'Course';
-        // $courses = Course::all()->sortBy('major_id');
         $courses = Course::orderBy('major_id')->paginate(15);
         $majors = [];
         $years = [];

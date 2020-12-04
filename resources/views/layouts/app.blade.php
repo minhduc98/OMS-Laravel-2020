@@ -116,7 +116,7 @@
                     </div>
                 </li>
                 <li>
-                    <a> Personal information <span class="fa arrow"></span></a>
+                    <a><i class="fa fa-cog"></i> Settings <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
                             <a href="{{ action('UserController@index') }}"><i class="fa fa-user"></i> User</a>
@@ -132,7 +132,7 @@
                 @endif
                 @if(Auth::user()->userType == 'admin')
                 <li>
-                    <a>Academic information <span class="fa arrow"></span></a>
+                    <a><i class="fa fa-users"></i>  Management <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
                             <a href="{{ action('CourseController@index') }}"><i class="fa fa-book"></i> Course</a>
@@ -152,19 +152,13 @@
                     </ul>
                 </li>
                 <li>
-                    <a>Transcript & Diploma information <span class="fa arrow"></span></a>
+                    <a><i class="fa fa-file-pdf-o"></i>  Report <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="#"><i class="fa fa-calculator"></i> Course Report</a>
+                            <a href="#"><i class="fa fa-calculator"></i> Transcript</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-sticky-note-o"></i> Transcript</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-sticky-note"></i> Transcript Detail</a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-trophy"></i> Diploma</a>
+                            <a href="{{ action('DiplomaController@index') }}"><i class="fa fa-trophy"></i> Diploma</a>
                         </li>
                     </ul>
                 </li>
