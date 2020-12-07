@@ -16,7 +16,8 @@
                                 <thead>
                                     <tr class="success">
                                         <th>Operations</th>
-                                        <th>PDF output</th>
+                                        <th>Export Diploma</th>
+                                        <th>Export Letter</th>
                                         <th>Student Code</th>
                                         <th>Ranking </th>
                                     </tr>
@@ -34,8 +35,14 @@
                                         </td>
                                         <td>
                                             <a href="/diploma/{{$diplomas[$i]->id}}">
-                                                <i class="fa fa-arrow-right"></i>Export PDF
+                                                <i class="fa fa-arrow-right"></i>Export Diploma
                                             </a>
+                                        </td>
+                                        <td>
+                                            <a href="/diploma_letter/{{$diplomas[$i]->id}}">
+                                                <i class="fa fa-file"></i>Export Letter
+                                            </a>
+                                        </td>
                                         <td>{{ $student_codes[$i] }}</td>
                                         <td>{{ $diplomas[$i]->ranking }}</td>
                                         </tr>

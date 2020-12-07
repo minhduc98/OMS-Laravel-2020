@@ -68,7 +68,6 @@ class MajorController extends Controller
                     'department_id' => $request->department_id,
                     'year_id' => $request->year_id,
                 ];
-                // dd($data);
                 $major = Major::create($data);
             });
         }

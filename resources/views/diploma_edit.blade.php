@@ -13,64 +13,76 @@
                         <div class='table-responsive'>
                             <table class="table table-bordered" border="1" style="width: 75%; margin-left: 100px">
                                 <tr>
-                                    <th>Major Name</th>
-                                    <th>{{Form::hidden('text', $id)}}{{Form::input('text', 'major_name', $major->MajorName, ['class' => 'form-control', 'style' => 'width: 100%;'])}}</th>
+                                    <th>Student Code</th>
+                                    <th>{{Form::hidden('text', $id)}}{{Form::select('student_id', $students, old('student_id', optional($diploma)->student_id ?? ''), ['class' => 'form-control', 'style' => 'width: 100%;'])}}
+                                    </th>
                                 </tr>
                                 <tr>
-                                    <th>Major Name in Vietnamese </th>
-                                    <th>{{Form::input('text', 'major_name_v', $major->MajorName_v, ['class' => 'form-control','style' => 'width: 100%;'])}}</th>
+                                    <th>Ranking </th>
+                                    <th>{{Form::input('text', 'ranking', $diploma->ranking, ['class' => 'form-control','style' => 'width: 100%;'])}}
+                                    </th>
                                 </tr>
                                 <tr>
-                                    <th>Short Name</th>
-                                    <th>{{Form::input('text', 'major_shortName', $major->shortName, ['class' => 'form-control','style' => 'width: 100%;'])}}</th>
+                                    <th>Ranking in Vietnamese</th>
+                                    <th>{{Form::input('text', 'ranking_v', $diploma->ranking_v, ['class' => 'form-control','style' => 'width: 100%;'])}}
+                                    </th>
                                 </tr>
                                 <tr>
-                                    <th>Program Name</th>
-                                    <th>{{Form::select('program_id', $programs, old('program_id', optional($major)->program_id ?? ''), ['class' => 'form-control', 'style' => 'width: 100%;'])}}</th>
+                                    <th>Graduation Year</th>
+                                    <th>{{Form::input('text', 'graduationYear', $diploma->graduationYear, ['class' => 'form-control','style' => 'width: 100%;'])}}
+                                    </th>
                                 </tr>
                                 <tr>
-                                    <th>Department Name</th>
-                                    <th>{{Form::select('department_id', $departments, old('department_id', optional($major)->department_id ?? ''), ['class' => 'form-control','style' => 'width: 100%;'])}}</th>
+                                    <th>Diploma Number</th>
+                                    <th>{{Form::input('text', 'diplomaNumber', $diploma->diplomaNumber, ['class' => 'form-control', 'style' => 'width: 100%;'])}}
+                                    </th>
                                 </tr>
                                 <tr>
-                                    <th>Year</th>
-                                    <th>{{Form::select('year_id', $years, old('year_id', optional($major)->year_id ?? ''), ['class' => 'form-control', 'style' => 'width: 100%;'])}}</th>
+                                    <th>Diploma Note</th>
+                                    <th>{{Form::input('text', 'diplomaNote', $diploma->diplomaNote, ['class' => 'form-control','style' => 'width: 100%;'])}}
+                                    </th>
                                 </tr>
                             </table>
                             <div style="margin-left: 100px">
-                                {{Form::submit('Update Major', ['class' => 'btn btn-primary'])}}
+                                {{Form::submit('Update Diploma', ['class' => 'btn btn-primary'])}}
                             </div>
                         </div>
                         @else
                         <div class='table-responsive'>
                             <table class="table table-bordered" border="1" style="width: 75%; margin-left: 100px">
-                            <tr>
-                                    <th>Major Name</th>
-                                    <th>{{Form::hidden('text', $id)}}{{Form::input('text', 'major_name', NULL, ['class' => 'form-control', 'style' => 'width: 100%;'])}}</th>
+                                <tr>
+                                    <th>Student Code</th>
+                                    <th>{{Form::hidden('text', $id)}}{{Form::select('student_id', $students, NULL, ['class' => 'form-control', 'style' => 'width: 100%;'])}}
+                                    </th>
                                 </tr>
                                 <tr>
-                                    <th>Major Name in Vietnamese </th>
-                                    <th>{{Form::input('text', 'major_name_v', NULL, ['class' => 'form-control', 'style' => 'width: 100%;'])}}</th>
+                                    <th>Ranking </th>
+                                    <th>{{Form::input('text', 'ranking', NULL, ['class' => 'form-control','style' => 'width: 100%;'])}}
+                                    </th>
                                 </tr>
                                 <tr>
-                                    <th>Short Name</th>
-                                    <th>{{Form::input('text', 'major_shortName', NULL, ['class' => 'form-control', 'style' => 'width: 100%;'])}}</th>
+                                    <th>Ranking in Vietnamese</th>
+                                    <th>{{Form::input('text', 'ranking_v', NULL, ['class' => 'form-control','style' => 'width: 100%;'])}}
+                                    </th>
                                 </tr>
                                 <tr>
-                                    <th>Program Name</th>
-                                    <th>{{Form::select('program_id', $programs,  NULL, ['class' => 'form-control', 'style' => 'width: 100%;'])}}</th>
+                                    <th>Graduation Year</th>
+                                    <th>{{Form::input('text', 'graduationYear', NULL, ['class' => 'form-control','style' => 'width: 100%;'])}}
+                                    </th>
                                 </tr>
                                 <tr>
-                                    <th>Department Name</th>
-                                    <th>{{Form::select('department_id', $departments, NULL, ['class' => 'form-control', 'style' => 'width: 100%;'])}}</th>
+                                    <th>Diploma Number</th>
+                                    <th>{{Form::input('text', 'diplomaNumber', NULL, ['class' => 'form-control', 'style' => 'width: 100%;'])}}
+                                    </th>
                                 </tr>
                                 <tr>
-                                    <th>Year</th>
-                                    <th>{{Form::select('year_id', $years,  NULL, ['class' => 'form-control', 'style' => 'width: 100%;'])}}</th>
+                                    <th>Diploma Note</th>
+                                    <th>{{Form::input('text', 'diplomaNote', NULL, ['class' => 'form-control','style' => 'width: 100%;'])}}
+                                    </th>
                                 </tr>
                             </table>
                             <div style="margin-left: 100px">
-                                {{Form::submit('Register Major', ['class' => 'btn btn-primary'])}}
+                                {{Form::submit('Register Diploma', ['class' => 'btn btn-primary'])}}
                             </div>
                         </div>
                         @endif

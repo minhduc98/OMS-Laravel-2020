@@ -34,7 +34,6 @@ class ImportDiploma implements ToModel, WithChunkReading, WithStartRow
         $diploma->diplomaNumber = $row[14];
         $diploma->diplomaNote = $row[15];
 
-        // dd($diploma);
         $diploma->save();
         return null;
     }
