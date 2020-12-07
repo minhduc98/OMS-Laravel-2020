@@ -15,6 +15,7 @@ class Course extends Model
         'totalHour',
         'lectureHour',
         'labHour',
+        'ECTS',
         'major_id' ];
 
     public function major()

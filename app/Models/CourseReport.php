@@ -8,11 +8,11 @@ class CourseReport extends Model
 {
     protected $table = 'course_report';
 
-    protected $fillable = [ 'final', 'transcriptDetail_id', 'course_id' ];
+    protected $fillable = [ 'final', 'transDetail_id', 'course_id' ];
 
     public function transcriptDetails()
     {
-        return $this->belongsTo('App\Models\TranscriptDetails', 'transcriptDetail_id', 'id');
+        return $this->belongsTo('App\Models\TranscriptDetails', 'transDetail_id', 'id');
     }
 
     public function course()

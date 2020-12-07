@@ -47,9 +47,6 @@ class DiplomaController extends Controller
         $jsonData = json_encode($data);
         $qrCode = base64_encode(QrCode::size(40)->generate($jsonData));
 
-        // $data = file_get_contents('public/img/Bac1.png');
-        // $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
-
         $path = public_path('img/abc.jpg');
         $image = base64_encode(file_get_contents($path));
 

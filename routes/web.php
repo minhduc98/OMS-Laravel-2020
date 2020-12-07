@@ -90,4 +90,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('diploma', 'DiplomaController@index');
 
     Route::get('diploma/{id}', 'DiplomaController@pdf');
+
+    //transcript
+    Route::get('transcript', 'TranscriptController@index');
+    Route::post('transcript/pdf', 'TranscriptController@pdf');
+    Route::get('transcript/pdf', 'TranscriptController@pdf');
 });

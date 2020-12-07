@@ -8,7 +8,7 @@ class TranscriptDetails extends Model
 {
     protected $table = 'transcript_detail';
 
-    protected $fillable = [ 'ETCScredits',
+    protected $fillable = [ 'ECTScredits',
     'GPAGrade',
     'note', 'transcript_id'];
 

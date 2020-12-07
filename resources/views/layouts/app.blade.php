@@ -155,7 +155,7 @@
                     <a><i class="fa fa-file-pdf-o"></i>  Report <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="#"><i class="fa fa-calculator"></i> Transcript</a>
+                            <a href="{{ action('TranscriptController@index') }}"><i class="fa fa-calculator"></i> Transcript</a>
                         </li>
                         <li>
                             <a href="{{ action('DiplomaController@index') }}"><i class="fa fa-trophy"></i> Diploma</a>
