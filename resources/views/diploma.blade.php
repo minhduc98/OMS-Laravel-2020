@@ -46,7 +46,7 @@
                         <div>
                             <a href="/home" class="btn btn-primary">Return</a>
                             <a href="/diploma_edit/new" class="btn btn-success">Add new diploma</a>
-                            <a href="/profile_import_excel" class="btn btn-warning">Import Excel file</a>
+                            <a href="/diploma_import_excel" class="btn btn-warning">Import Excel file</a>
                         </div>
                     </div>
                 </div>

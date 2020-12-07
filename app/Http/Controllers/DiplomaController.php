@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\ImportDiploma;
 use Illuminate\Http\Request;
 use App\Models\Student;
 use App\Models\Diploma;
@@ -26,6 +27,27 @@ class DiplomaController extends Controller
             array_push($student_codes, $student_code);
         }
         return view('diploma', compact('title', 'count', 'diplomas', 'student_codes'));
+    }
+
+    public function import_excel(Request $request)
+    {
+        $title = 'Import Excel for Diploma';
+        if ($request->isMethod('get')) {
+            return view('diploma_import_excel', compact('title'));
+        } else {
+            $request->validate([
+                'file' => 'required|file|mimes:xlsx',
+            ]);
+            \DB::beginTransaction();
+            try {
+                (new ImportDiploma)->import($request->file('file'));
+                \DB::commit();
+                return redirect()->action('DiplomaController@index');
+            } catch (\Illuminate\Database\QueryException $e) {
+                \DB::rollBack();
+            }
+            return redirect()->action('DiplomaController@index');
+        }
     }
 
     public function pdf(Request $request)

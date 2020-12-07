@@ -88,8 +88,10 @@ Route::group(['middleware' => ['auth']], function () {
 
     //diploma
     Route::get('diploma', 'DiplomaController@index');
-
     Route::get('diploma/{id}', 'DiplomaController@pdf');
+
+    Route::get('diploma_import_excel', 'DiplomaController@import_excel');
+    Route::post('diploma_import_excel', 'DiplomaController@import_excel');
 
     //transcript
     Route::get('transcript', 'TranscriptController@index');
