@@ -102,4 +102,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('transcript', 'TranscriptController@index');
     Route::post('transcript/pdf', 'TranscriptController@pdf');
     Route::get('transcript/pdf', 'TranscriptController@pdf');
+
+    Route::get('transcript/edit', 'TranscriptController@edit');
 });

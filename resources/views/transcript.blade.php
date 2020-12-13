@@ -11,7 +11,7 @@
                 <h2 class="page-header" style="color:#337ab7; padding-right: 20px; font-size: 18px;"><span
                         style="margin-right: 50px; font-size: 28px;">Transcript</span>Display list of transcripts</h2>
                 <div class="panel-body">
-                    <div class="row">
+                    <div class="row" style="border-style: dotted;">
                         {{Form::open(['method' => 'post', 'name' => 'transcript', 'action' => 'TranscriptController@pdf'])}}
                         <div class='table-responsive'>
                             <table class="table table-bordered" border="1" style="width: 75%; margin-left: 100px">
@@ -42,6 +42,12 @@
                         </div>
                         {{Form::close()}}
                         <!-- notification panel end -->
+                    </div>
+                    <br>
+                    <br>
+                    <div style="margin-left: 100px">
+                        <a href="/transcript/edit" class="btn btn-danger">Edit transcript</a>
+                        <a href="/transcript/new" class="btn btn-success">Add new transcript</a>
                     </div>
                 </div>
             </div>
