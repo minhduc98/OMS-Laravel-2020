@@ -19,6 +19,9 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('guess', 'GuessController@index');
+Route::get('guess/send', 'GuessController@send');
+
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/home', 'HomeController@index')->name('home');
 

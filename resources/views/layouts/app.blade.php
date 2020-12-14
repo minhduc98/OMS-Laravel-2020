@@ -92,7 +92,7 @@
                 @endguest
                 @if(!Auth::check())
                 <li>
-                    <a href="#">Guest access</a>
+                    <a href="{{ action('GuessController@index') }}">Guest access</a>
                 </li>
                 @endif
             </ul>
@@ -100,7 +100,6 @@
     </div>
 
     @if(Auth::check())
-    @if(Auth::user()->userType == 'student' || Auth::user()->userType == 'admin')
     <div class="navbar-default sidebar" role="navigation">
         <div class="sidebar-nav navbar-collapse">
 
@@ -108,37 +107,23 @@
                 <li class="sidebar-search">
                     <div class="input-group custom-search-form">
                         {{Form::open(['method'=>'GET'])}}
-                            {{Form::text('search', '', ['placeholder' => 'Search...'])}}
-                            <button class="btn btn-primary" name="submit-search" type="submit">
-                                <i class="fa fa-search" name="submit-search"></i>
-                            </button>
+                        {{Form::text('search', '', ['placeholder' => 'Search...'])}}
+                        <button class="btn btn-primary" name="submit-search" type="submit">
+                            <i class="fa fa-search" name="submit-search"></i>
+                        </button>
                         {{Form::close()}}
                     </div>
                 </li>
-                <li>
-                    <a><i class="fa fa-cog"></i> Settings <span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li>
-                            <a href="{{ action('UserController@index') }}"><i class="fa fa-user"></i> User</a>
-                        </li>
-                        <li>
-                            <a href="{{ action('ProfileController@index') }}"><i class="fa fa-info-circle"></i> Profile</a>
-                        </li>
-                        <li>
-                            <a href="{{ action('StudentController@index') }}"><i class="fa fa-graduation-cap"></i> Student</a>
-                        </li>
-                    </ul>
-                </li>
-                @endif
                 @if(Auth::user()->userType == 'admin')
                 <li>
-                    <a><i class="fa fa-users"></i>  Management <span class="fa arrow"></span></a>
+                    <a><i class="fa fa-users"></i> Academic Information <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
                             <a href="{{ action('CourseController@index') }}"><i class="fa fa-book"></i> Course</a>
                         </li>
                         <li>
-                            <a href="{{ action('DepartmentController@index') }}"><i class="fa fa-university"></i> Department</a>
+                            <a href="{{ action('DepartmentController@index') }}"><i class="fa fa-university"></i>
+                                Department</a>
                         </li>
                         <li>
                             <a href="{{ action('ProgramController@index') }}"><i class="fa fa-laptop"></i> Program</a>
@@ -152,13 +137,31 @@
                     </ul>
                 </li>
                 <li>
-                    <a><i class="fa fa-file-pdf-o"></i>  Report <span class="fa arrow"></span></a>
+                    <a><i class="fa fa-file-pdf-o"></i> Report <span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="{{ action('TranscriptController@index') }}"><i class="fa fa-calculator"></i> Transcript</a>
+                            <a href="{{ action('TranscriptController@index') }}"><i class="fa fa-calculator"></i>
+                                Transcript</a>
                         </li>
                         <li>
                             <a href="{{ action('DiplomaController@index') }}"><i class="fa fa-trophy"></i> Diploma</a>
+                        </li>
+                    </ul>
+                </li>
+                @endif
+                @if(Auth::user()->userType == 'student' || Auth::user()->userType == 'admin')
+                <li>
+                    <a><i class="fa fa-cog"></i> Settings <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li>
+                            <a href="{{ action('UserController@index') }}"><i class="fa fa-user"></i> User</a>
+                        </li>
+                        <li>
+                            <a href="{{ action('ProfileController@index') }}"><i class="fa fa-info-circle"></i> Profile</a>
+                        </li>
+                        <li>
+                            <a href="{{ action('StudentController@index') }}"><i class="fa fa-graduation-cap"></i>
+                                Student</a>
                         </li>
                     </ul>
                 </li>
