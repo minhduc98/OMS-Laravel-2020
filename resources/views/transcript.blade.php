@@ -11,10 +11,11 @@
                 <h2 class="page-header" style="color:#337ab7; padding-right: 20px; font-size: 18px;"><span
                         style="margin-right: 50px; font-size: 28px;">Transcript</span>Display list of transcripts</h2>
                 <div class="panel-body">
-                    <div class="row" style="border-style: dotted;">
+                    <div class="row">
                         {{Form::open(['method' => 'post', 'name' => 'transcript', 'action' => 'TranscriptController@pdf'])}}
                         <div class='table-responsive'>
                             <table class="table table-bordered" border="1" style="width: 75%; margin-left: 100px">
+                                <caption>Export Transcript</caption>
                                 <tr>
                                     <th>Student</th>
                                     <th>{{Form::select('student_id', $students, NULL, ['class' => 'form-control', 'style' => 'width: 100%;'])}}
@@ -45,9 +46,36 @@
                     </div>
                     <br>
                     <br>
-                    <div style="margin-left: 100px">
-                        <a href="/transcript/edit" class="btn btn-danger">Edit transcript</a>
-                        <a href="/transcript/new" class="btn btn-success">Add new transcript</a>
+                    <div class='table-responsive table-content'>
+                        <table class="table table-bordered" border="1" style="width: 75%; margin-left: 100px">
+                            <caption>Transcript Management</caption>
+                            <thead>
+                                <tr class="success">
+                                    <th>Operations</th>
+                                    <th>Student Code</th>
+                                    <th>Year </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for ($i=0; $i<$count; $i++) <tr class="warning">
+                                    <td>
+                                        <a href="/transcript_edit/{{$transcripts[$i]->id}}">
+                                            <i class="fa fa-edit"></i>Edit
+                                        </a>
+                                        <br>
+                                        <a href="/transcript_delete/{{$transcripts[$i]->id}}">
+                                            <i class="fa fa-remove"></i>Delete
+                                        </a>
+                                    </td>
+                                    <td>{{ $student_codes[$i] }}</td>
+                                    <td>{{ $years_year[$i] }}</td>
+                                    </tr>
+                                    @endfor
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                        <a href="/transcript/new" class="btn btn-success" style="margin-left: 100px">Add new transcript</a>
                     </div>
                 </div>
             </div>

@@ -44,6 +44,16 @@ class StudentTableSeeder extends Seeder
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
             ),
+            3 =>
+            array (
+                'id' => 4,
+                'student_code' => 'USTHBI8-042',
+                'user_id' => 4,
+                'profile_id' => 4,
+                'major_id' => 3,
+                'created_at' => '2020-06-16 05:55:46',
+                'updated_at' => '2020-06-26 08:32:33',
+            ),
         ));
     }
 }

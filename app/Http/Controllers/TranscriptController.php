@@ -12,19 +12,144 @@ use App\Models\Transcript;
 use App\Models\TranscriptDetails;
 use App\Models\Course;
 use App\Models\CourseReport;
+use Illuminate\Support\Facades\DB;
 
 class TranscriptController extends Controller
 {
-    public function index() {
-        $title = 'Export Transcript';
+    public function index()
+    {
+        $title = 'Transcript';
         $students = Student::pluck('student_code', 'id');
         $years = Year::pluck('year', 'id');
         $majors = Major::pluck('MajorName', 'id');
 
-        return view('transcript', compact('title', 'students', 'years', 'majors'));
+        $transcripts = Transcript::all();
+        $student_codes = [];
+        $years_year = [];
+        $count = count($transcripts);
+        foreach ($transcripts as $transcript) {
+            $student = new Student();
+            $year_year = new Year();
+            $student_code = Student::where('id', $transcript->student_id)->value('student_code');
+            $year_year = Year::where('id', $transcript->year_id)->value('year');
+            array_push($student_codes, $student_code);
+            array_push($years_year, $year_year);
+        }
+
+        return view('transcript', compact('title', 'transcripts', 'students', 'years', 'majors', 'years_year', 'student_codes', 'count'));
     }
 
-    public function getGPAGrade($mark) {
+    public function edit($id)
+    {
+        $title = 'Edit Transcript';
+        $students = Student::pluck('student_code', 'id');
+        $years = Year::pluck('year', 'id');
+        $majors = Major::pluck('MajorName', 'id');
+        $transcriptDetail_id = TranscriptDetails::where('transcript_id', $id)->value('id');
+        $courses = CourseReport::join('course', 'course.id', '=', 'course_report.course_id')
+            ->where('course_report.transDetail_id', $transcriptDetail_id)
+            ->get();
+        $count = count($courses);
+
+        return view('transcript_edit', compact('id', 'title', 'count', 'count', 'courses', 'students', 'years', 'majors'));
+    }
+
+    public function save(Request $request)
+    {
+        if ($request->id != 'new') {
+
+            DB::transaction(function () use ($request) {
+
+                $transcriptDetail_id = TranscriptDetails::where('transcript_id', $request->id)->value('id');
+
+                foreach ($request->final as $key => $value) {
+                    $courseReport = CourseReport::where([ ['transDetail_id', $transcriptDetail_id], ['course_id', $request->course_id[$key]] ])->first();
+                    $courseReport->final = $request->final[$key];
+                    $courseReport->save();
+                }
+            });
+            return redirect()->action('TranscriptController@index');
+        }
+    }
+
+    public function create_transcript()
+    {
+        $title = 'Create Transcript';
+        $students = Student::pluck('student_code', 'id');
+        $years = Year::pluck('year', 'id');
+        $majors = Major::pluck('MajorName', 'id');
+        return view('transcript_new', compact('title', 'students', 'years', 'majors'));
+    }
+
+    public function find_course(Request $request)
+    {
+        $title = 'Create Transcript with Course';
+        $data_general = [
+            'student_id' => $request->student_id,
+            'year_id' => $request->year_id,
+        ];
+        $transcript = Transcript::create($data_general);
+
+        $data_transcript_detail = [
+            'transcript_id' => $transcript->id,
+            'note' => 'validated',
+        ];
+        $transcript_detail = TranscriptDetails::create($data_transcript_detail);
+
+        if ($request->year_position == '1.') {
+            //Find courses compatible
+            $courseEng = Course::where([
+                    ['course.major_id', $request->major_id],
+                    ['course.courseCode', 'like', '%EN2.%']
+                ]);
+            $courses = Course::where('course.major_id', $request->major_id)
+                ->where('course.courseCode', 'like', '%'.$request->year_position.'%')
+                ->union($courseEng)
+                ->get();
+            } else {
+                //Find Common Course for B2 and B3 student
+                $major_common = Major::where('MajorName', 'like', '%Common Courses%')
+                ->where('year_id', $request->year_id);
+                $major_id_common = $major_common->value('id');
+                //Find courses compatible
+                $courseCommon = Course::where('course.major_id', $major_id_common)
+                    ->where('course.courseCode', 'not like', '%EN2.%');
+                $courses = Course::where('course.major_id', $request->major_id)
+                    ->where('course.courseCode', 'like', '%'.$request->year_position.'%')
+                    ->union($courseCommon)
+                    ->get();
+                }
+        return view('transcript_new_course', compact('title', 'courses', 'transcript_detail'));
+    }
+
+    public function saveNewTranscript(Request $request)
+    {
+        foreach ($request->final as $key => $value) {
+            $dataCourseReport = [
+                'final' => $request->final[$key],
+                'transDetail_id' => $request->id,
+                'course_id' => $request->course_id[$key]
+            ];
+            $courseReport = CourseReport::create($dataCourseReport);
+        }
+        return redirect()->action('TranscriptController@index');
+    }
+
+    public function delete(Request $request)
+    {
+        $transcript = Transcript::find($request->id);
+        $transcriptDetail = TranscriptDetails::where('transcript_id', $transcript->value('id'));
+
+        $courseReports = CourseReport::where('transDetail_id', $transcriptDetail->value('id'))->delete();
+
+        $transcript->delete();
+        $transcriptDetail->delete();
+
+        return redirect()->action('TranscriptController@index');
+    }
+
+    public function getGPAGrade($mark)
+    {
         if ($mark >= 16) {
             $ECTSgrade = 'A';
         } elseif ($mark >=14) {
@@ -39,7 +164,8 @@ class TranscriptController extends Controller
         return $ECTSgrade;
     }
 
-    public function completeCourse($mark) {
+    public function completeCourse($mark)
+    {
         if ($mark >=10) {
             $complete = 'Hoàn thành / Yes';
         }

@@ -103,5 +103,12 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('transcript/pdf', 'TranscriptController@pdf');
     Route::get('transcript/pdf', 'TranscriptController@pdf');
 
-    Route::get('transcript/edit', 'TranscriptController@edit');
+    Route::get('transcript_edit/{id}', 'TranscriptController@edit');
+    Route::post('transcript_edit/{id}', 'TranscriptController@save');
+    Route::get('transcript_delete/{id}', 'TranscriptController@delete');
+
+    Route::get('transcript/new', 'TranscriptController@create_transcript');
+    Route::post('transcript/show', 'TranscriptController@find_course');
+    Route::get('transcript/show', 'TranscriptController@find_course');
+    Route::post('transcript/create', 'TranscriptController@saveNewTranscript');
 });
