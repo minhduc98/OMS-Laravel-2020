@@ -22,6 +22,7 @@
                                 </thead>
                                 <tbody>
                                     @foreach($users as $user)
+                                    @if($user == Auth::user() && $user->userType == 'student')
                                     <tr class="warning">
                                         <td>
                                             <a href="/user_edit/{{$user->id}}">
@@ -33,9 +34,11 @@
                                                 <i class="fa fa-remove"></i>Delete
                                             </a>
                                             @endif
+                                        </td>
                                         <td>{{ $user->username }}</td>
                                         <td>{{ $user->userType }}</td>
                                     </tr>
+                                    @endif
                                     @endforeach
                                 </tbody>
                             </table>

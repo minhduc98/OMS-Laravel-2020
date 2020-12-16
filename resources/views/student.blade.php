@@ -27,10 +27,12 @@
                                             <a href="/student_edit/{{$students[$i]->id}}">
                                                 <i class="fa fa-edit"></i>Edit
                                             </a>
+                                            @if(Auth::user()->userType == 'admin')
                                             <br>
                                             <a href="/student_delete/{{$students[$i]->id}}">
                                                 <i class="fa fa-remove"></i>Delete
                                             </a>
+                                            @endif
                                         <td>{{ $students[$i]->student_code }}</td>
                                         <td>{{ $majors[$i]}}</td>
                                     </tr>

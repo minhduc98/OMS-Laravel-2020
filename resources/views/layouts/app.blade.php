@@ -102,12 +102,11 @@
     @if(Auth::check())
     <div class="navbar-default sidebar" role="navigation">
         <div class="sidebar-nav navbar-collapse">
-
             <ul class="nav" id="side-menu">
                 <li class="sidebar-search">
                     <div class="input-group custom-search-form">
-                        {{Form::open(['method'=>'GET'])}}
-                        {{Form::text('search', '', ['placeholder' => 'Search...'])}}
+                        {{Form::open(['method' => 'POST', 'action' => 'HomeController@search'])}}
+                        {{Form::text('search', NULL, ['placeholder' => 'Search...'])}}
                         <button class="btn btn-primary" name="submit-search" type="submit">
                             <i class="fa fa-search" name="submit-search"></i>
                         </button>
@@ -157,7 +156,8 @@
                             <a href="{{ action('UserController@index') }}"><i class="fa fa-user"></i> User</a>
                         </li>
                         <li>
-                            <a href="{{ action('ProfileController@index') }}"><i class="fa fa-info-circle"></i> Profile</a>
+                            <a href="{{ action('ProfileController@index') }}"><i class="fa fa-info-circle"></i>
+                                Profile</a>
                         </li>
                         <li>
                             <a href="{{ action('StudentController@index') }}"><i class="fa fa-graduation-cap"></i>

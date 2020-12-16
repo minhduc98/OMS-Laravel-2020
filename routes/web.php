@@ -35,6 +35,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('profile_import_excel', 'ProfileController@import_excel');
     Route::post('profile_import_excel', 'ProfileController@import_excel');
 
+
     //student
     Route::get('student', 'StudentController@index');
 
@@ -114,4 +115,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('transcript/show', 'TranscriptController@find_course');
     Route::get('transcript/show', 'TranscriptController@find_course');
     Route::post('transcript/create', 'TranscriptController@saveNewTranscript');
+
+    //search
+    Route::post('profile/search', 'HomeController@search');
+    Route::get('profile/search', 'HomeController@search');
 });

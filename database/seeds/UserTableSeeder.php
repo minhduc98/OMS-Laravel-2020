@@ -13,15 +13,40 @@ class UserTableSeeder extends Seeder
     {
         $data = [
             [
-                'username' => 'abc',
+                'username' => 'admin',
+                'password' => bcrypt('12345678'),
+                'userType' => 'admin'
+            ],
+            [
+                'username' => 'an',
                 'password' => bcrypt('12345678'),
                 'userType' => 'student'
             ],
             [
-                'username' => 'admin',
+                'username' => 'anh',
                 'password' => bcrypt('12345678'),
-                'userType' => 'admin'
-            ]
+                'userType' => 'student'
+            ],
+            [
+                'username' => 'tuan',
+                'password' => bcrypt('12345678'),
+                'userType' => 'student'
+            ],
+            [
+                'username' => 'duc',
+                'password' => bcrypt('12345678'),
+                'userType' => 'student'
+            ],
+            [
+                'username' => 'tung',
+                'password' => bcrypt('12345678'),
+                'userType' => 'student'
+            ],
+            [
+                'username' => 'phong',
+                'password' => bcrypt('12345678'),
+                'userType' => 'student'
+            ],
         ];
 
         DB::table('users')->insert($data);

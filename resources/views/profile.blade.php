@@ -41,9 +41,12 @@
                                                 <i class="fa fa-edit"></i>Edit
                                             </a>
                                             <br>
+                                            @if(Auth::user()->userType == 'admin')
                                             <a href="/profile_delete/{{$profile->id}}">
                                                 <i class="fa fa-remove"></i>Delete
                                             </a>
+                                            @endif
+                                        </td>
                                         <td>{{ $profile->fullName }}</td>
                                         <td>{{ $profile->fullName_v }}</td>
                                         <td>{{ $profile->gender }}</td>
