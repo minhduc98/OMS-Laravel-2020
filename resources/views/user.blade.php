@@ -22,7 +22,7 @@
                                 </thead>
                                 <tbody>
                                     @foreach($users as $user)
-                                    @if(($user == Auth::user() && $user->userType == 'student') || ($user->userType == 'admin'))
+                                    @if(($user == Auth::user() && $user->userType == 'student') || (Auth::user()->userType == 'admin'))
                                     <tr class="warning">
                                         <td>
                                             <a href="/user_edit/{{$user->id}}">
