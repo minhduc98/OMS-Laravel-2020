@@ -13,10 +13,8 @@ class ProfileTableSeeder extends Seeder
     {
         \DB::table('profile')->delete();
 
-        \DB::table('profile')->insert(array (
-            0 =>
-            array (
-                'id' => 1,
+        $data = [
+            [
                 'fullName' => 'Bui Thi An',
                 'fullName_v' => 'Bùi Thi An',
                 'gender' => 'female',
@@ -34,10 +32,8 @@ class ProfileTableSeeder extends Seeder
                 'Country' => 'Vietnam',
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            1 =>
-            array (
-                'id' => 2,
+            ],
+            [
                 'fullName' => 'Mai Tuan Anh',
                 'fullName_v' => 'Mai Tuấn Anh',
                 'gender' => 'male',
@@ -55,10 +51,8 @@ class ProfileTableSeeder extends Seeder
                 'Country' => 'Vietnam',
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            2 =>
-            array (
-                'id' => 3,
+            ],
+            [
                 'fullName' => 'Tran Kim Quoc Tuan',
                 'fullName_v' => 'Trần Kim Quốc Tuấn',
                 'gender' => 'male',
@@ -76,10 +70,8 @@ class ProfileTableSeeder extends Seeder
                 'Country' => 'Vietnam',
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            3 =>
-            array (
-                'id' => 4,
+            ],
+            [
                 'fullName' => 'Do Dang Minh Duc',
                 'fullName_v' => 'Đỗ Đăng Minh Đức',
                 'gender' => 'male',
@@ -97,10 +89,8 @@ class ProfileTableSeeder extends Seeder
                 'Country' => 'Vietnam',
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            4 =>
-            array (
-                'id' => 5,
+            ],
+            [
                 'fullName' => 'Ngo Thanh Tung',
                 'fullName_v' => 'Ngô Thanh Tùng',
                 'gender' => 'male',
@@ -118,10 +108,8 @@ class ProfileTableSeeder extends Seeder
                 'Country' => 'Vietnam',
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            5 =>
-            array (
-                'id' => 6,
+            ],
+            [
                 'fullName' => 'Vu Tuan Phong',
                 'fullName_v' => 'Vũ Tuấn Phong',
                 'gender' => 'male',
@@ -139,8 +127,8 @@ class ProfileTableSeeder extends Seeder
                 'Country' => 'Vietnam',
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-        ));
-
+            ],
+        ];
+        DB::table('profile')->insert($data);
     }
 }

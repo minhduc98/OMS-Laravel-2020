@@ -13,10 +13,8 @@ class CourseTableSeeder extends Seeder
     {
         \DB::table('course')->delete();
 
-        \DB::table('course')->insert(array (
-            0 =>
-            array (
-                'id' => 1,
+        $data = [
+            [
                 'major_id' => 1,
                 'courseName' => 'Cellular Biology',
                 'courseName_v' => 'Sinh học tế bào',
@@ -28,10 +26,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 3,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            1 =>
-            array (
-                'id' => 2,
+            ],
+            [
                 'major_id' => 1,
                 'courseName' => 'Genetics',
                 'courseName_v' => 'Di truyền học',
@@ -43,10 +39,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 3,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            2 =>
-            array (
-                'id' => 3,
+            ],
+            [
                 'major_id' => 1,
                 'courseName' => 'General Chemmistry I',
                 'courseName_v' => 'Hóa đại cương I',
@@ -58,10 +52,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 3,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            3 =>
-            array (
-                'id' => 4,
+            ],
+            [
                 'major_id' => 1,
                 'courseName' => 'Organic Chemistry',
                 'courseName_v' => 'Hóa hữu cơ',
@@ -73,10 +65,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 3,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            4 =>
-            array (
-                'id' => 5,
+            ],
+            [
                 'major_id' => 1,
                 'courseName' => 'General Chemistry II',
                 'courseName_v' => 'Hóa đại cương II',
@@ -88,10 +78,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 3,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            5 =>
-            array (
-                'id' => 6,
+            ],
+            [
                 'major_id' => 1,
                 'courseName' => 'Practical Chemistry',
                 'courseName_v' => 'Thực hành hóa',
@@ -103,10 +91,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 2,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            6 =>
-            array (
-                'id' => 7,
+            ],
+            [
                 'major_id' => 1,
                 'courseName' => 'Basic programming',
                 'courseName_v' => 'Lập trình cơ bản',
@@ -118,10 +104,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 4,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            7 =>
-            array (
-                'id' => 8,
+            ],
+            [
                 'major_id' => 1,
                 'courseName' => 'Introduction to Informatics',
                 'courseName_v' => 'Tin học cơ sở',
@@ -133,10 +117,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 4,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            8 =>
-            array (
-                'id' => 9,
+            ],
+            [
                 'major_id' => 1,
                 'courseName' => 'Linear Algebra',
                 'courseName_v' => 'Đại số tuyến tính',
@@ -148,10 +130,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 3,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            9 =>
-            array (
-                'id' => 10,
+            ],
+            [
                 'major_id' => 1,
                 'courseName' => 'Calculus I',
                 'courseName_v' => 'Giải tích I',
@@ -163,10 +143,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 3,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            10 =>
-            array (
-                'id' => 11,
+            ],
+            [
                 'major_id' => 1,
                 'courseName' => 'Calculus II',
                 'courseName_v' => 'Giải tích II',
@@ -178,10 +156,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 3,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            11 =>
-            array (
-                'id' => 12,
+            ],
+            [
                 'major_id' => 1,
                 'courseName' => 'Mechanics and Thermodynamics',
                 'courseName_v' => 'Cơ học và nhiệt động học',
@@ -193,10 +169,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 3,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            12 =>
-            array (
-                'id' => 13,
+            ],
+            [
                 'major_id' => 1,
                 'courseName' => 'Electromagnetism',
                 'courseName_v' => 'Điện từ trường',
@@ -208,10 +182,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 2,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            13 =>
-            array (
-                'id' => 14,
+            ],
+            [
                 'major_id' => 1,
                 'courseName' => 'Optics and Introduction to Quantum mechanics',
                 'courseName_v' => 'Quang học và giới thiệu về cơ học lượng tử',
@@ -223,10 +195,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 2,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            14 =>
-            array (
-                'id' => 15,
+            ],
+            [
                 'major_id' => 1,
                 'courseName' => 'Practical Physics',
                 'courseName_v' => 'Thực hành vật lý',
@@ -238,10 +208,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 2,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            15 =>
-            array (
-                'id' => 16,
+            ],
+            [
                 'major_id' => 1,
                 'courseName' => 'Introduction to Science in English',
                 'courseName_v' => 'Tiếng Anh khoa học',
@@ -253,10 +221,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 3,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            16 =>
-            array (
-                'id' => 17,
+            ],
+            [
                 'major_id' => 1,
                 'courseName' => 'Basic English Reading',
                 'courseName_v' => 'Kỹ năng đọc cơ bản',
@@ -268,10 +234,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 1,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            17 =>
-            array (
-                'id' => 18,
+            ],
+            [
                 'major_id' => 1,
                 'courseName' => 'Basic English Writing',
                 'courseName_v' => 'Kỹ năng viết cơ bản',
@@ -283,10 +247,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 2,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            18 =>
-            array (
-                'id' => 19,
+            ],
+            [
                 'major_id' => 1,
                 'courseName' => 'Basic English Listening',
                 'courseName_v' => 'Kỹ năng nghe cơ bản',
@@ -298,10 +260,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 1,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            19 =>
-            array (
-                'id' => 20,
+            ],
+            [
                 'major_id' => 1,
                 'courseName' => 'Basic English Speaking',
                 'courseName_v' => 'Kỹ năng nói cơ bản',
@@ -313,10 +273,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 2,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            20 =>
-            array (
-                'id' => 21,
+            ],
+            [
                 'major_id' => 1,
                 'courseName' => 'Presentation Skills',
                 'courseName_v' => 'Kỹ năng thuyết trình',
@@ -328,10 +286,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 2,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            21 =>
-            array (
-                'id' => 22,
+            ],
+            [
                 'major_id' => 1,
                 'courseName' => 'Listening and Note-taking Skills',
                 'courseName_v' => 'Kỹ năng nghe và ghi chú',
@@ -343,10 +299,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 2,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            22 =>
-            array (
-                'id' => 23,
+            ],
+            [
                 'major_id' => 1,
                 'courseName' => 'Academic Writing Skills',
                 'courseName_v' => 'Kỹ năng viết học thuật',
@@ -358,10 +312,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 2,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            23 =>
-            array (
-                'id' => 24,
+            ],
+            [
                 'major_id' => 1,
                 'courseName' => 'Law on Science and Technology of Vietnam',
                 'courseName_v' => 'Luật Khoa học và Công nghệ Việt Nam',
@@ -373,10 +325,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 1,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            24 =>
-            array (
-                'id' => 25,
+            ],
+            [
                 'major_id' => 1,
                 'courseName' => 'Foundation of Economics',
                 'courseName_v' => 'Kinh tế học đại cương',
@@ -388,10 +338,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 1,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            25 =>
-            array (
-                'id' => 26,
+            ],
+            [
                 'major_id' => 3,
                 'courseName' => 'Analysis& Algebraic Structures',
                 'courseName_v' => 'Giải tích và Cấu trúc Đại Số',
@@ -403,10 +351,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 3,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            26 =>
-            array (
-                'id' => 27,
+            ],
+            [
                 'major_id' => 3,
                 'courseName' => 'Algorithms And Data Structures',
                 'courseName_v' => 'Cấu trúc dữ liệu và giải thuật',
@@ -418,10 +364,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 3,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            27 =>
-            array (
-                'id' => 28,
+            ],
+            [
                 'major_id' => 3,
                 'courseName' => 'Object-oriented Programming',
                 'courseName_v' => 'Lập trình hướng đối tượng',
@@ -433,10 +377,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 4,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            28 =>
-            array (
-                'id' => 29,
+            ],
+            [
                 'major_id' => 3,
                 'courseName' => 'Signals And Systems',
                 'courseName_v' => 'Tín hiệu và hệ thống',
@@ -448,10 +390,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 3,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            29 =>
-            array (
-                'id' => 30,
+            ],
+            [
                 'major_id' => 3,
                 'courseName' => 'Computer Architecture',
                 'courseName_v' => 'Kiến trúc máy tính',
@@ -463,10 +403,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 3,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            30 =>
-            array (
-                'id' => 31,
+            ],
+            [
                 'major_id' => 3,
                 'courseName' => 'Discrete Mathematics',
                 'courseName_v' => 'Toán rời rạc',
@@ -478,10 +416,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 4,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            31 =>
-            array (
-                'id' => 32,
+            ],
+            [
                 'major_id' => 3,
                 'courseName' => 'Numerical Methods',
                 'courseName_v' => 'Phương pháp số học',
@@ -493,10 +429,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 4,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            32 =>
-            array (
-                'id' => 33,
+            ],
+            [
                 'major_id' => 3,
                 'courseName' => 'Basic Databases',
                 'courseName_v' => 'Cơ sở dữ liệu',
@@ -508,10 +442,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 4,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            33 =>
-            array (
-                'id' => 34,
+            ],
+            [
                 'major_id' => 3,
                 'courseName' => 'Computer Networks',
                 'courseName_v' => 'Mạng máy tính',
@@ -523,10 +455,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 4,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            34 =>
-            array (
-                'id' => 35,
+            ],
+            [
                 'major_id' => 3,
                 'courseName' => 'Software Engineering',
                 'courseName_v' => 'Kỹ thuật phần mềm',
@@ -538,10 +468,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 4,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            35 =>
-            array (
-                'id' => 36,
+            ],
+            [
                 'major_id' => 3,
                 'courseName' => 'Operating Systems',
                 'courseName_v' => 'Hệ điều hành',
@@ -553,10 +481,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 4,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            36 =>
-            array (
-                'id' => 37,
+            ],
+            [
                 'major_id' => 3,
                 'courseName' => 'Digital Signal Processing',
                 'courseName_v' => 'Xử lý tín hiệu số',
@@ -568,10 +494,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 4,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            37 =>
-            array (
-                'id' => 38,
+            ],
+            [
                 'major_id' => 3,
                 'courseName' => 'Mobile Wireless Communication',
                 'courseName_v' => 'Truyền thông không dây di động',
@@ -583,10 +507,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 3,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            38 =>
-            array (
-                'id' => 39,
+            ],
+            [
                 'major_id' => 2,
                 'courseName' => 'French 2.1',
                 'courseName_v' => 'Tiếng Pháp 2.1',
@@ -598,10 +520,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 4,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            39 =>
-            array (
-                'id' => 40,
+            ],
+            [
                 'major_id' => 2,
                 'courseName' => 'French 2.2',
                 'courseName_v' => 'Tiếng Pháp 2.2',
@@ -613,10 +533,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 4,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            40 =>
-            array (
-                'id' => 41,
+            ],
+            [
                 'major_id' => 2,
                 'courseName' => 'Law on IP rights',
                 'courseName_v' => 'Luật sở hữu trí tuệ',
@@ -628,10 +546,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 1,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            41 =>
-            array (
-                'id' => 42,
+            ],
+            [
                 'major_id' => 2,
                 'courseName' => 'Project Management',
                 'courseName_v' => 'Quản lý dự án',
@@ -643,10 +559,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 1,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            42 =>
-            array (
-                'id' => 43,
+            ],
+            [
                 'major_id' => 3,
                 'courseName' => 'Probabilities & Statistics',
                 'courseName_v' => 'Xác suất thống kê',
@@ -658,7 +572,8 @@ class CourseTableSeeder extends Seeder
                 'ECTS' => 3,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-        ));
+            ],
+        ];
+        DB::table('course')->insert($data);
     }
 }

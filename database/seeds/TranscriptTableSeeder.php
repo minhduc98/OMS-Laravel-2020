@@ -13,15 +13,14 @@ class TranscriptTableSeeder extends Seeder
     {
         \DB::table('transcript')->delete();
 
-        \DB::table('transcript')->insert(array (
-            0 =>
-            array (
-                'id' => 1,
+        $data = [
+            [
                 'student_id' => 3,
                 'year_id' => 2,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-        ));
+            ]
+        ];
+        DB::table('transcript')->insert($data);
     }
 }

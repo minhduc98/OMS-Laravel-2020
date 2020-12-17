@@ -12,11 +12,8 @@ class MajorTableSeeder extends Seeder
     public function run()
     {
         \DB::table('major')->delete();
-
-        \DB::table('major')->insert(array (
-            0 =>
-            array (
-                'id' => 1,
+        $data = [
+            [
                 'MajorName' => 'Foundation Science',
                 'MajorName_v' => 'Khoa học cơ bản',
                 'shortName' => 'Foundation Science',
@@ -25,10 +22,8 @@ class MajorTableSeeder extends Seeder
                 'program_id' => 1,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            1 =>
-            array (
-                'id' => 2,
+            ],
+            [
                 'MajorName' => 'Common Courses',
                 'MajorName_v' => 'Những môn học chung',
                 'shortName' => 'MS ',
@@ -37,10 +32,8 @@ class MajorTableSeeder extends Seeder
                 'program_id' => 1,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            2 =>
-            array (
-                'id' => 3,
+            ],
+            [
                 'MajorName' => 'Information and Communication Technology',
                 'MajorName_v' => 'Công nghệ thông tin và truyền thông',
                 'shortName' => 'ICT',
@@ -49,10 +42,8 @@ class MajorTableSeeder extends Seeder
                 'program_id' => 1,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            3 =>
-            array (
-                'id' => 4,
+            ],
+            [
                 'MajorName' => 'Cyber Security',
                 'MajorName_v' => 'An toàn thông tin',
                 'shortName' => 'CS',
@@ -61,10 +52,8 @@ class MajorTableSeeder extends Seeder
                 'program_id' => 1,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            4 =>
-            array (
-                'id' => 5,
+            ],
+            [
                 'MajorName' => 'Pharmacological, Medical and Agronomical Biotechnology',
                 'MajorName_v' => 'Công nghệ Sinh học nông y dược',
                 'shortName' => 'PMAB',
@@ -73,10 +62,8 @@ class MajorTableSeeder extends Seeder
                 'program_id' => 1,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            5 =>
-            array (
-                'id' => 6,
+            ],
+            [
                 'MajorName' => 'Pharmacological, Medical and Agronomical Biotechnology',
                 'MajorName_v' => 'Công nghệ Sinh học nông y dược',
                 'shortName' => 'PMAB',
@@ -85,10 +72,8 @@ class MajorTableSeeder extends Seeder
                 'program_id' => 1,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            6 =>
-            array (
-                'id' => 7,
+            ],
+            [
                 'MajorName' => 'Foundation Science',
                 'MajorName_v' => 'Khoa học cơ bản',
                 'shortName' => 'Foundation Science',
@@ -97,10 +82,8 @@ class MajorTableSeeder extends Seeder
                 'program_id' => 1,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            7 =>
-            array (
-                'id' => 8,
+            ],
+            [
                 'MajorName' => 'Information and Communication Technology',
                 'MajorName_v' => 'Công nghệ thông tin và truyền thông',
                 'shortName' => 'ICT',
@@ -109,10 +92,8 @@ class MajorTableSeeder extends Seeder
                 'program_id' => 1,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            8 =>
-            array (
-                'id' => 9,
+            ],
+            [
                 'MajorName' => 'Information and Communication Technology',
                 'MajorName_v' => 'Công nghệ thông tin và truyền thông',
                 'shortName' => 'ICT',
@@ -121,10 +102,8 @@ class MajorTableSeeder extends Seeder
                 'program_id' => 1,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            9 =>
-            array (
-                'id' => 10,
+            ],
+            [
                 'MajorName' => 'Foundation Science',
                 'MajorName_v' => 'Khoa học cơ bản',
                 'shortName' => 'Foundation Science',
@@ -133,10 +112,8 @@ class MajorTableSeeder extends Seeder
                 'program_id' => 1,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-            10 =>
-            array (
-                'id' => 11,
+            ],
+            [
                 'MajorName' => 'Common Courses',
                 'MajorName_v' => 'Những môn học chung',
                 'shortName' => 'MS',
@@ -145,7 +122,8 @@ class MajorTableSeeder extends Seeder
                 'program_id' => 1,
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
-            ),
-        ));
+            ],
+        ];
+        DB::table('major')->insert($data);
     }
 }
