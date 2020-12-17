@@ -22,7 +22,6 @@ class StudentTableSeeder extends Seeder
             'created_at' => '2020-06-16 05:55:46',
             'updated_at' => '2020-06-26 08:32:33',
         ],
-        1 =>
         [
             'student_code' => 'USTHBI7-001',
             'user_id' => 3,
@@ -31,7 +30,6 @@ class StudentTableSeeder extends Seeder
             'created_at' => '2020-06-16 05:55:46',
             'updated_at' => '2020-06-26 08:32:33',
         ],
-        2 =>
         [
                 'student_code' => 'USTHBI8-159',
                 'user_id' => 4,
@@ -40,7 +38,6 @@ class StudentTableSeeder extends Seeder
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
             ],
-            3 =>
             [
                 'student_code' => 'USTHBI8-042',
                 'user_id' => 5,
@@ -49,7 +46,6 @@ class StudentTableSeeder extends Seeder
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
             ],
-            4 =>
             [
                 'student_code' => 'USTHBI8-159',
                 'user_id' => 6,
@@ -58,7 +54,6 @@ class StudentTableSeeder extends Seeder
                 'created_at' => '2020-06-16 05:55:46',
                 'updated_at' => '2020-06-26 08:32:33',
             ],
-            5 =>
             [
                 'student_code' => 'USTHBI8-139',
                 'user_id' => 7,
