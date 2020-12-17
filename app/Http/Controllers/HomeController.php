@@ -112,9 +112,8 @@ class HomeController extends Controller
                     });
                 });
             });
-            // $searches = $search_profile->union($search_student)->union($search_diploma)
-            //                     ->union($search_major)->union($search_year)->get();
-            $searches = $search_profile->get();
+            $searches = $search_profile->union($search_student)->union($search_diploma)
+                                ->union($search_major)->union($search_year)->get();
             $majorNames = [];
             $yearNames = [];
             $student_codes = [];
