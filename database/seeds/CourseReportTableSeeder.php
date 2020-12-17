@@ -15,7 +15,6 @@ class CourseReportTableSeeder extends Seeder
 
         $data = [
             [
-                'id' => 1,
                 'transDetail_id' => 1,
                 'course_id' => 1,
                 'final' => 10,
