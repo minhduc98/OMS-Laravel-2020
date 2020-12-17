@@ -47,7 +47,7 @@ class StudentTableSeeder extends Seeder
                 'updated_at' => '2020-06-26 08:32:33',
             ],
             [
-                'student_code' => 'USTHBI8-159',
+                'student_code' => 'USTHBI8-160',
                 'user_id' => 6,
                 'profile_id' => 5,
                 'major_id' => 3,
