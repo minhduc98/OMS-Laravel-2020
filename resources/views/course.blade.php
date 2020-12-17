@@ -25,6 +25,7 @@
                                         <th>Total Hour</th>
                                         <th>Lecture Hour</th>
                                         <th>Lab Hour</th>
+                                        <th>ECTS</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -47,6 +48,7 @@
                                         <td>{{ $courses[$i]->totalHour }}</td>
                                         <td>{{ $courses[$i]->lectureHour }}</td>
                                         <td>{{ $courses[$i]->labHour }}</td>
+                                        <td>{{ $courses[$i]->ECTS }}</td>
                                     </tr>
                                     @endfor
                                 </tbody>

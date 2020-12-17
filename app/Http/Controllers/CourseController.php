@@ -67,6 +67,7 @@ class CourseController extends Controller
                 $course->totalHour = $request->course_totalHour;
                 $course->lectureHour = $request->course_lectureHour;
                 $course->labHour = $request->course_labHour;
+                $course->ECTS = $request->ECTS;
                 $course->save();
             });
         } else {
@@ -80,6 +81,7 @@ class CourseController extends Controller
                     'lectureHour' => $request->course_lectureHour,
                     'labHour' => $request->course_labHour,
                     'major_id' => $request->major,
+                    'ECTS' => $request->ECTS,
                 ];
                 $course = Course::create($data);
             });

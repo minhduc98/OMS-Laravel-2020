@@ -47,6 +47,11 @@
                                     <th>{{Form::input('text', 'course_labHour', $course->labHour, ['class' => 'form-control','style' => 'width: 100%;'])}}
                                     </th>
                                 </tr>
+                                <tr>
+                                    <th>ECTS</th>
+                                    <th>{{Form::input('text', 'ECTS', $course->ECTS, ['class' => 'form-control','style' => 'width: 100%;'])}}
+                                    </th>
+                                </tr>
                             </table>
                             <div style="margin-left: 100px">
                                 {{Form::submit('Update Course', ['class' => 'btn btn-primary'])}}
@@ -101,6 +106,11 @@
                                 <tr>
                                     <th>Lab Hour</th>
                                     <th>{{Form::input('text', 'course_labHour', NULL, ['class' => 'form-control','style' => 'width: 100%;'])}}
+                                    </th>
+                                </tr>
+                                <tr>
+                                    <th>ECTS</th>
+                                    <th>{{Form::input('text', 'ECTS', NULL, ['class' => 'form-control','style' => 'width: 100%;'])}}
                                     </th>
                                 </tr>
                             </table>
