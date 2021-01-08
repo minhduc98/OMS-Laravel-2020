@@ -55,6 +55,7 @@
                                     </tr>
                                 </tbody>
                             </table>
+                            @if($search_result->student_code && $search_result->MajorName && $search_result->year)
                             <table class="table table-bordered" border="1">
                                 <caption>Academic Information</caption>
                                 <thead>
@@ -72,6 +73,7 @@
                                     </tr>
                                 </tbody>
                             </table>
+                            @endif
                             @if($search_result->ranking && $search_result->ranking_v && $search_result->graduationYear
                             && $search_result->diplomaNumber && $search_result->diplomaNote )
                             <table class="table table-bordered" border="1">
